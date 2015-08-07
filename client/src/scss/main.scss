@@ -1,0 +1,171 @@
+body{
+  background-color: #000;
+}
+$width: 16 * 100px;
+$height: 9 * 100px; 
+
+$cols: 5;
+$cell-spacing: 30px;
+$sqare-width: ($width - ($cell-spacing * ($cols + 1))) / $cols;
+
+$white: #fff;
+$caffeine-brown: #5c442e;
+$video-brown: #5b473f;
+$flush-brown: #63422c;
+$productivity-brown: #918078;
+$cup-meter-brown: #a37e63;
+$pot-view-brown: #d0baa0;
+$white-50p: rgba(255,255,255,0.5);
+$coffee-brown: #3d221a;
+.coffee-tile{
+  color: $white;
+  width: $width;
+  height: $height;
+  background-color: $white;
+  display: block;
+  position: relative;
+  font-family: "museo-sans",sans-serif;
+  
+  & > div{
+    margin-top: $cell-spacing;
+    margin-right: $cell-spacing;
+    height: 40px;
+    float: left;
+    &:first-child{
+      margin-left: $cell-spacing;
+    }
+    position: relative;
+  }
+  .number{
+    font-size: 140px;
+    font-weight: 700;
+    padding-left: 20px;
+  }
+  .label{
+    color: $white-50p;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+  .square{
+    background-color: #f00;
+    width: calc(#{$sqare-width} );
+    height: calc(#{$sqare-width} );
+
+  }
+  .caffeine{
+    background-color: $caffeine-brown;
+  }
+  .video{
+    width: calc( (#{$width} - (#{$cell-spacing} * (#{$cols} + 1))) / #{$cols} * 2 + #{$cell-spacing} );
+    
+    background-color: $video-brown;
+    height: calc(#{$sqare-width} );
+  }
+  
+  .flush{
+    background-color: $flush-brown;
+  }
+  .productivity{
+    background-color: $productivity-brown;
+  }
+  .word-meter,
+  .cup-meter,
+  .pot-view{
+    height: calc( #{$height}  -  #{$cell-spacing} * 3 - ((#{$width} - (#{$cell-spacing} * (#{$cols} + 1))) / #{$cols}));
+    background-color: gray;
+  }
+  .word-meter{
+    margin-left: $cell-spacing;
+    width: calc(#{$sqare-width} );
+    .arrow{
+        position: absolute;
+        transition: top 1s;
+        top:#{20 * (5 - 1) + 10}%;
+        left: 0;
+        transform: translate(0,-50%);
+        width: $sqare-width * (1/7)
+      }
+    .word{
+      display: flex;
+      align-items: center;
+      height: calc( (#{$height}  -  #{$cell-spacing} * 3 - ((#{$width} - (#{$cell-spacing} * (#{$cols} + 1))) / #{$cols})) / 5);
+      span{
+        text-transform: uppercase;
+        font-size: 30px;
+        font-weight: 700;
+        text-align: center;
+        display: block;
+        width: 100%;
+        
+      }
+
+      &:nth-of-type(1){ background-color: #331f0f; }
+      &:nth-of-type(2){ background-color: #4a2d18; }
+      &:nth-of-type(3){ background-color: #613c21; }
+      &:nth-of-type(4){ background-color: #774a2a; }
+      &:nth-of-type(5){ background-color: #8e5833; }
+    }
+  }
+  .cup-meter{
+    width: calc(#{$sqare-width} );
+    background-color: $cup-meter-brown;
+    .cup {
+      float: left;
+      width: $sqare-width * (1/7);
+      &:nth-child(3n-2){
+        margin-left: $sqare-width * (1/7);
+      }
+      margin-right: $sqare-width * (1/7);
+      margin-top: $sqare-width * (1/7);
+      position: relative;
+      img{
+        width: 100%;
+      }
+    }
+    .pots-grid{
+      position: absolute;
+      bottom: 0;
+      width: $sqare-width;
+      padding-bottom: $sqare-width * (1/7);
+    }
+    .pot{
+      float: left;
+      position: relative;
+      width: $sqare-width * (1/5.5);
+      margin-left: ($sqare-width * (1/5.5) * 3) / 4.5;
+      img{
+        width: 100%;
+      }
+    }
+  }
+  .pot-view{
+    width: calc( (#{$width} - (#{$cell-spacing} * (#{$cols} + 1))) / #{$cols} * 3 + #{$cell-spacing} * 2 );
+    position: relative;
+    background-color: $pot-view-brown;
+    .pot{
+      position: absolute;
+      right: $sqare-width * (1/7);;
+      bottom: $sqare-width * (1/7);
+      height: $sqare-width * 1.5;
+      width: 100%;
+      .maskpot{
+        height: $sqare-width * 1.5;
+        position: absolute;
+        right:0;
+        bottom:0;
+        z-index: 100;
+      }
+      .level{
+        transition: height 1s;
+        position: absolute;
+        right:0;
+        bottom:0;
+        background-color: $coffee-brown;
+        width: 55%;
+        height: 11%;
+        z-index: 10;
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /home/pi/projects/howmuchcoffee/
+SLACK_WEBHOOK_URL=https://hooks.slack.com/services/xxxx/xxxx
+export SLACK_WEBHOOK_URL
+sudo -E python dumb-coffee.py

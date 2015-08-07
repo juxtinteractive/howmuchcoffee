@@ -1,0 +1,2 @@
+@reboot sh /home/pi/projects/howmuchcoffee/start-monitor.sh >/home/pi/projects/howmuchcoffee/monitor-logs 2>&1
+@reboot sh /home/pi/projects/howmuchcoffee/start-web.sh >/home/pi/projects/howmuchcoffee/web-logs 2>&1
