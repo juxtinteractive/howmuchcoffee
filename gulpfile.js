@@ -17,7 +17,7 @@ gulp.task('compile-js', function() {
   .pipe(browserify({
     debug: true,
     paths: ['client/src/js', 'node_modules'],
-    transform: ['debowerify', 'deamdify']
+    transform: ['debowerify']
   }))
   .pipe(replace(/%%SLACK_BOT_TOKEN%%/g, process.env.SLACK_BOT_TOKEN))
   .pipe(sourcemaps.init({loadMaps: true}))

@@ -10,6 +10,8 @@ cd ~/projects/howmuchcoffee/
 copy the files from pi-code into `~/projects/howmuchcoffee/`
 edit `start-monitor.sh` to include the slack webhook url
 
+set the host name on the pi to `coffeenpi`
+
 ```
 chmod +x start-web.sh
 chmod +x start-monitor.sh
