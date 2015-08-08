@@ -29,6 +29,7 @@
     "gulp-util": "^3.0.6",
     "jquery": "^2.1.4",
     "moment": "^2.10.6",
+    "morgan": "^1.6.1",
     "papaparse": "^4.1.2"
   }
 }
