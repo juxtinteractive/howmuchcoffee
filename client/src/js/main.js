@@ -43,7 +43,7 @@ $(function() {
     console.log(statsMan.getPotLevel(), statsMan.getCupsDrank(), statsMan.getFlushes(), statsMan.getProductivity());
     var _cups = Math.round(statsMan.getCupsDrank());
     var _pots = Math.min(3, Math.floor(_cups / 12));
-    $('.coffee-tile .caffeine .number').text(Math.ceil((_cups * 0.15) * 10) * 0.1);
+    $('.coffee-tile .caffeine .number').text(Math.ceil((_cups * 0.15) * 10) / 10);
     $('.coffee-tile .flush .number').text(Math.ceil(statsMan.getFlushes()));
     $('.coffee-tile .productivity .number').text(Math.ceil(_cups * 0.5));
     $('.coffee-tile .cups-grid .cup').show();
