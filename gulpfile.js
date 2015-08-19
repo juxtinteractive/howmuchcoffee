@@ -19,7 +19,7 @@ gulp.task('compile-js', function() {
     paths: ['client/src/js', 'node_modules'],
     transform: ['debowerify']
   }))
-  .pipe(replace(/%%SLACK_BOT_TOKEN%%/g, process.env.SLACK_BOT_TOKEN))
+  .pipe(replace(/%%PUBLIC_ADDRESS%%/g, process.env.PUBLIC_ADDRESS))
   .pipe(sourcemaps.init({loadMaps: true}))
   .pipe(sourcemaps.write('./'))
   .pipe(gulp.dest('client/build/_assets/js/'));

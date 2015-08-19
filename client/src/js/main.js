@@ -7,7 +7,7 @@ var StatsManager = require('./stats-manager');
 
 $(function() {
   function pullData() {
-    papa.parse('http://coffeenpi.local:9000/', {
+    papa.parse('%%PUBLIC_ADDRESS%%%', {
       download: true,
       complete: parseResultsTable,
       error: function() {
