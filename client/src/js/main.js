@@ -7,7 +7,7 @@ var StatsManager = require('./stats-manager');
 
 $(function() {
   function pullData() {
-    papa.parse('%%PUBLIC_ADDRESS%%%', {
+    papa.parse('%%PUBLIC_ADDRESS%%', {
       download: true,
       complete: parseResultsTable,
       error: function() {
